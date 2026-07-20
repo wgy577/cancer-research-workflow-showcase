@@ -1,6 +1,6 @@
 # Cancer Research Workflow Showcase
 
-![Cancer Research Agent](https://img.shields.io/badge/Cancer_Research_Agent-2563EB?style=flat-square) ![RAG Memory](https://img.shields.io/badge/RAG_Memory-16A34A?style=flat-square) ![Multi-model Review](https://img.shields.io/badge/Multi--model_Review-7C3AED?style=flat-square) ![Human-in-the-loop](https://img.shields.io/badge/Human--in--the--loop-EA580C?style=flat-square)
+![Problem](https://img.shields.io/badge/Problem-Cancer_Research-17324D?style=flat-square) ![Method](https://img.shields.io/badge/Method-RAG_Agent_Workflow-2F6B5F?style=flat-square) ![Review](https://img.shields.io/badge/Review-Multi--Model_%2B_HITL-C47C3C?style=flat-square)
 
 这是一个仅包含项目说明和脱敏演示素材的公开展示仓库。生产代码、Prompt、API 配置、内部知识库与医生数据不在本仓库中。
 

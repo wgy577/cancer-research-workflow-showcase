@@ -49,6 +49,41 @@ RAG 不只是问答检索，而是整个 Agent 的长期记忆读取层。
 
 UI 与 MCP 自动化入口共享同一套生成、审核、RAG、存储和修正核心。UI 中 B4 建议由医生决定是否采纳；无医生实时参与的自动化入口输出结构化结果，但不会伪造医生反馈运行知识飞轮。
 
+## 项目模块
+
+```text
+Experience Layer
+├── Admin workspace          创建调研、查看历史、触发最终导出
+├── Physician workspace      勾选、卡片、对话与表格四种编辑方式
+└── MCP entry                为外部 Agent 提供结构化自动化入口
+
+Agent Orchestration
+├── Input validator          白名单、癌种规范化与失败短路
+├── B1 Context Builder       RAG、Doctor KB、同器官标杆与规则视图
+├── B2 Generator             任务框架生成 + 逐任务并行扩写
+├── B3 Review Engine         程序检查 + 双审核员 + 分片修正
+├── B4 Final Auditor         联网事实核查、引用与修改建议
+└── Flywheel                 医生 diff、规则归纳、知识覆盖与索引重建
+
+Shared Infrastructure
+├── Token-in-State           前端只携带稳定记录标识
+├── Persistent Record        保存任务、审核、submission 与审计轨迹
+├── URL Verification         黑名单、真实搜索结果与可访问性标记
+└── Excel Contract           七字段结构化交付格式
+```
+
+## 交互与通信
+
+- **UI → Orchestrator**：管理员或医生的操作只提交癌种、token、编辑指令和确认状态，不把整份长记录塞进前端 State。
+- **Orchestrator → RAG**：B1 传入规范癌种和检索种子，返回预算化上下文、同类任务与适用规则。
+- **B2A → B2B**：通过固定任务编号传递任务框架；B2B 每项独立生成，再按编号合并为七字段记录。
+- **Auditor → Fixer**：审核模型只返回结构化问题列表，修正模型只处理已定位字段，避免审核与改写互相污染。
+- **B4 → Human Gate**：终审输出状态、理由、建议任务说明、建议病理说明与引用；UI 中由医生决定是否采纳。
+- **Human Gate → Memory**：医生定稿与 AI 初稿的 diff 进入飞轮，转为规则和 Doctor KB，再重建 RAG 索引。
+- **UI / MCP 共核**：两条入口共享同一业务核心；差异只发生在人是否实时在环以及建议是否自动采纳。
+
+更完整的模块、状态、通信与失败回路说明见 [Architecture & Communication](docs/ARCHITECTURE.md)。
+
 ## 量化结果
 
 - 内部基准中，最佳模型组合有效任务覆盖率达到 **94.1%（16/17）**，总耗时 **289.6 秒**。

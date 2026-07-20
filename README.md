@@ -1,6 +1,6 @@
 # Cancer Research Workflow Showcase
 
-**癌种诊断任务调研 Agent · RAG Memory · Multi-model Review · Human-in-the-loop**
+![Cancer Research Agent](https://img.shields.io/badge/Cancer_Research_Agent-2563EB?style=flat-square) ![RAG Memory](https://img.shields.io/badge/RAG_Memory-16A34A?style=flat-square) ![Multi-model Review](https://img.shields.io/badge/Multi--model_Review-7C3AED?style=flat-square) ![Human-in-the-loop](https://img.shields.io/badge/Human--in--the--loop-EA580C?style=flat-square)
 
 这是一个仅包含项目说明和脱敏演示素材的公开展示仓库。生产代码、Prompt、API 配置、内部知识库与医生数据不在本仓库中。
 

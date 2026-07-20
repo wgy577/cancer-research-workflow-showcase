@@ -58,17 +58,28 @@ UI 与 MCP 自动化入口共享同一套生成、审核、RAG、存储和修正
 
 ## 产品演示
 
-### 落地页与流程介绍
+下面四段动图依次展示从进入系统、编辑任务、查看完整任务表到导出 Excel 的主要使用体验。
 
-![Landing demo](assets/demo/landing.gif)
+<table>
+  <tr>
+    <td align="center"><strong>01 · 落地页与流程介绍</strong></td>
+    <td align="center"><strong>02 · 任务选择与编辑</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/demo/landing.gif" alt="Landing demo" width="100%"></td>
+    <td><img src="assets/demo/edit_tasks.gif" alt="Task editing demo" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>03 · 完整任务表与历史结果</strong></td>
+    <td align="center"><strong>04 · Excel 导出与继续编辑</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/demo/task_table.gif" alt="Task table demo" width="100%"></td>
+    <td><img src="assets/demo/excel_export.gif" alt="Excel export demo" width="100%"></td>
+  </tr>
+</table>
 
-### 任务编辑
-
-![Task editing demo](assets/demo/edit_tasks.gif)
-
-### Excel 导出
-
-![Excel export demo](assets/demo/excel_export.gif)
+> 动图中偶尔出现的 Gradio 分享地址来自历史演示环境，现已失效，不是当前生产入口。
 
 ## 截图画廊
 
@@ -116,7 +127,7 @@ UI 与 MCP 自动化入口共享同一套生成、审核、RAG、存储和修正
 
 - 本仓库没有可运行源码，也不提供生产部署包。
 - 不包含 API Key、环境变量、内部 Prompt、知识库原文、医生数据或私有输出文件。
-- 为避免泄露访问能力，含 Gradio 分享 Token 的演示帧未公开。
+- 动图中出现的历史 Gradio 地址已经失效；本仓库不提供任何当前可用的访问凭据或生产入口。
 - 这里展示的是 Agent Engineering 与医生协作流程，不构成医疗建议或临床验证结论。
 
 © 2026 WGY. All rights reserved.
